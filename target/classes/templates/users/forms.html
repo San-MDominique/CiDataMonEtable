@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Startmin - Bootstrap Admin Theme</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- MetisMenu CSS -->
+        <link href="../../../css/metisMenu.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="../../css/startmin.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="../../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div id="wrapper">
+
+            <aside th:insert="fragments/fragment::sidebar" class="sidebar navbar-default" role="navigation"/>
+
+
+            <div id="page-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12" style="display: flex;">
+                            <h1 class="page-header">Ajouter users</h1>
+                            <div style="padding-top: 50px ; margin-left:60%;  ">
+                             <a th:href="@{/users}">
+                                <i data-feather="arrow-left" width="100" > retour</i>
+                             </a>   
+                            </div>
+                        </div>
+                    
+                        <!-- /.col-lg-12 -->
+                    </div>
+                    <!-- /.row -->
+                    <section id="multiple-column-form">
+                        <div class="row match-height">
+                            <div class="col-12">
+                                <div class="card">
+                                
+                
+                                    <div class="card-content">
+                                        <div class="card-body">
+                                            <form  class="form" th:object="${user}" th:action="@{/users/save}"  method="post"  >
+                                                <div class="row">
+                                                    <!-- Champ pour le prénom -->
+                                                    <div class="col-md-6 col-12">
+                                                        <div class="form-group">
+                                                            <label for="pseudo-column">pseudo</label>
+                                                            <input th:field="*{pseudo}"  type="text" id="pseudo-column" class="form-control" placeholder="pseudo" name="pseudo-column">
+                                                        </div>
+                                                    </div>
+                                                    <!-- Champ pour le nom -->
+                                                    <div class="col-md-6 col-12">
+                                                        <div class="form-group">
+                                                            <label for="password-column">password</label>
+                                                            <input th:field="*{password}" type="text" id="password-column" class="form-control" placeholder="password" name="password-column">
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Champ pour la date de Creation -->
+
+
+                                                    <!-- Boutons d'action agrandis, écartés, et centrés -->
+                                                    <div class="col-12 d-flex  mt-4" style="padding-left: 30%;">
+                                                        <button type="reset" class="btn btn-light-secondary mr-4" style="width: 150px;">Annuler</button>
+                                                        <button type="submit" class="btn btn-primary ml-4" style="width: 150px;">Enregistrer</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /#page-wrapper -->
+
+        </div>
+        <!-- /#wrapper -->
+
+        <!-- jQuery -->
+        <script src="../js/jquery.min.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="../js/bootstrap.min.js"></script>
+
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="../js/metisMenu.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="../js/startmin.js"></script>
+
+    </body>
+
+</html>
